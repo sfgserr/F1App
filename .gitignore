@@ -1,1 +1,9 @@
-/F1App/packages
+/F1App/packages/
+/F1App/F1App.WPF/bin/
+/F1App/F1App.WPF/obj/
+/F1App/F1App.WPF/packages.config/
+/F1App/F1App.Models/bin/
+/F1App/F1App.Models/obj/
+/F1App/F1App.Models/packages.config/
+/F1App/LoadingSpinner/bin/
+/F1App/LoadingSpinner/obj/

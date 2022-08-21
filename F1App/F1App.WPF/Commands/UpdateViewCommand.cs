@@ -9,6 +9,7 @@ namespace F1App.WPF.Commands
     {
         private readonly IFactoryViewModel _factory;
         private readonly INavigator _navigator;
+
         public UpdateViewCommand(IFactoryViewModel factory, INavigator navigator)
         {
             _factory = factory;
