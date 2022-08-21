@@ -1,0 +1,140 @@
+﻿<Window x:Class="F1App.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:F1App.WPF"
+        xmlns:nav="clr-namespace:F1App.WPF.States.Navigators"
+        xmlns:custom="clr-namespace:LoadingSpinner;assembly=LoadingSpinner"
+        xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+        xmlns:con="clr-namespace:F1App.WPF.Converters"
+        mc:Ignorable="d"
+        Title="F1App"
+        Height="450" 
+        Width="800" 
+        AllowsTransparency="True" 
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStyle="None">
+    <Window.Resources>
+        <ImageBrush x:Key="F1Logo" ImageSource="/Resources/Images/f1logo.png" Stretch="Fill"/>
+        <ImageBrush x:Key="F1LogoMouseOver" ImageSource="/Resources/Images/f1logo-mouseover.png" Stretch="Fill"/>
+        <con:InverseBooleanConverter x:Key="converter"/>
+        
+        <Style x:Key="HomeButtonStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="{StaticResource F1Logo}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}"  BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource F1LogoMouseOver}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="MenuButtonStyle"
+               BasedOn="{StaticResource {x:Type ToggleButton}}"
+               TargetType="{x:Type RadioButton}">
+            <Style.Setters>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Grid VerticalAlignment="Stretch"
+                                  HorizontalAlignment="Stretch"
+                                  Background="{TemplateBinding Background}">
+
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           VerticalAlignment="Center"
+                                           Style="{StaticResource F1Font}"
+                                           Margin="5,0,0,0"/>
+
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="#6B0201"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#6B0201"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="0,0,0,0">
+        <Border Background="White"
+                CornerRadius="30"
+                Height="350"
+                Margin="0,15,0,0">
+            <custom:Spinner IsLoading="{Binding IsLoading}" Margin="0,0,0,0"/>
+        </Border>
+
+
+        <Grid Margin="0,0,0,0">
+            <Border Background="#E20100"
+                    Height="85"
+                    CornerRadius="30,30,0,0"
+                    Margin="0,18,0,346"
+                    Visibility="{Binding IsLoading, Converter={StaticResource converter}}">
+
+                <StackPanel Margin="0,0,0,0">
+
+                    <RadioButton Width="100"
+                                 Height="80"
+                                 Margin="0,0,550,0"
+                                 Style="{StaticResource HomeButtonStyle}"
+                                 Command="{Binding UpdateView}"
+                                 CommandParameter="{x:Static nav:ViewType.Home}"/>
+
+                    <RadioButton Content="Drivers"
+                                 Height="85"
+                                 Width="100"
+                                 Margin="0,-80,300,0"
+                                 Style="{StaticResource MenuButtonStyle}"
+                                 Foreground="White"
+                                 Command="{Binding UpdateView}"
+                                 CommandParameter="{x:Static nav:ViewType.Drivers}"/>
+
+                    <RadioButton Content="Winners"
+                                 Height="85"
+                                 Width="115"
+                                 Margin="0,-85,85,0"
+                                 Style="{StaticResource MenuButtonStyle}"
+                                 Foreground="White"
+                                 Command="{Binding UpdateView}"
+                                 CommandParameter="{x:Static nav:ViewType.Winners}"/>
+
+                    <RadioButton Content="Grands Prix"
+                                 FontSize="9"
+                                 Height="85"
+                                 Width="115"
+                                 Margin="145,-85,0,0"
+                                 Style="{StaticResource MenuButtonStyle}"
+                                 Foreground="White"
+                                 Command="{Binding UpdateView}"
+                                 CommandParameter="{x:Static nav:ViewType.GrandsPrix}"/>
+
+                </StackPanel>
+            </Border>
+        </Grid>
+        <Grid Margin="0,80,0,0">
+            
+
+            <ContentControl Content="{Binding CurrentView}" Visibility="{Binding IsLoading, Converter={StaticResource converter}}"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+D:\F1AppSource\F1App\F1App.Models\bin\Debug\F1App.Models.dll
+D:\F1AppSource\F1App\F1App.Models\bin\Debug\F1App.Models.pdb
+D:\F1AppSource\F1App\F1App.Models\bin\Debug\HtmlAgilityPack.dll
+D:\F1AppSource\F1App\F1App.Models\bin\Debug\HtmlAgilityPack.pdb
+D:\F1AppSource\F1App\F1App.Models\bin\Debug\HtmlAgilityPack.xml
+D:\F1AppSource\F1App\F1App.Models\obj\Debug\F1App.Models.csproj.AssemblyReference.cache
+D:\F1AppSource\F1App\F1App.Models\obj\Debug\F1App.Models.csproj.CoreCompileInputs.cache
+D:\F1AppSource\F1App\F1App.Models\obj\Debug\F1App.Models.csproj.CopyComplete
+D:\F1AppSource\F1App\F1App.Models\obj\Debug\F1App.Models.dll
+D:\F1AppSource\F1App\F1App.Models\obj\Debug\F1App.Models.pdb

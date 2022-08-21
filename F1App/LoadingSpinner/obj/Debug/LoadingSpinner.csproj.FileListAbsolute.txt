@@ -1,0 +1,13 @@
+D:\F1AppSource\F1App\LoadingSpinner\bin\Debug\LoadingSpinner.dll
+D:\F1AppSource\F1App\LoadingSpinner\bin\Debug\LoadingSpinner.pdb
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.csproj.AssemblyReference.cache
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner_MarkupCompile.cache
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner_MarkupCompile.lref
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\Themes\Generic.baml
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.g.resources
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.Properties.Resources.resources
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.csproj.GenerateResource.cache
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.csproj.CoreCompileInputs.cache
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.dll
+D:\F1AppSource\F1App\LoadingSpinner\obj\Debug\LoadingSpinner.pdb
